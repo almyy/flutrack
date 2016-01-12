@@ -1,17 +1,13 @@
 /**
  * Created by Martin on 12.01.2016.
  */
-angluar.module('starter.services', ['$http'])
+angular.module('starter.services', [])
 
-.factory('HttpService', function($http) {
+.factory('HttpService', ['$http', function($http) {
 
         return {
-            get: function(url, query) {
-                $http.get(url+query).then(function (res) {
-                    return res;
-                }, function (error) {
-                    return error;
-                });
+                get: function (url, query) {
+                    return $http.get(url + query);
+                }
             }
-        }
-    });
+    }]);
