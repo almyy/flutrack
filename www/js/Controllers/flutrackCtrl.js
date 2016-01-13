@@ -4,7 +4,7 @@
 angular.module('starter.controllers', ['starter.services'])
 
 .controller('FlutrackCtrl', function ($scope, HttpService) {
-        HttpService.get('/api', '?s=feverANDcough').then(function(res) {
+        HttpService.get('/api', '?results').then(function(res) {
             $scope.text = res;
         }, function (error) {
             $scope.text = error;
