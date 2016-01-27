@@ -5,9 +5,9 @@ angular.module('starter.controllers', ['starter.services'])
 
 .controller('FlutrackCtrl', function ($scope, HttpService) {
 		var data = [];
-        HttpService.get('/api', '/results.json').then(function(res) {
-            for(tweet in res.data) {
-            	data.push(new google.maps.LatLng(res.data[tweet].latitude, res.data[tweet].longitude));
+        HttpService.get('/backend', '').then(function(res) {
+            for(var tweet in res.data) {
+            	data.push(new google.maps.LatLng(res.data[tweet].lat, res.data[tweet].lng));
         	}
         	var mapOptions = {
         		zoom: 4,
